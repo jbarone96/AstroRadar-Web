@@ -24,10 +24,11 @@ export default function Terms() {
         applicable laws.
       </p>
 
-      <h2>2. Accounts</h2>
+      <h2>2. Data on Your Device</h2>
       <p>
-        Some features require an account. You are responsible for keeping your login credentials confidential and for
-        all activity that occurs under your account.
+        The App does not require an account. Saved sites and settings are stored locally on your device. You are
+        responsible for your device and its data; deleting or uninstalling the App may permanently remove your saved
+        sites. If we introduce accounts in the future, these Terms will be updated.
       </p>
 
       <h2>3. Subscriptions</h2>
@@ -51,9 +52,9 @@ export default function Terms() {
       <h2>4. Location and Data Accuracy</h2>
       <p>
         Light pollution, weather, and astronomical data in the App come from third-party and public datasets,
-        including NASA Black Marble. This data is provided for planning purposes only. We do not guarantee its
-        accuracy and are not responsible for decisions made based on it, including decisions to travel to remote
-        locations. Always use your own judgment and take appropriate safety precautions.
+        including NASA Black Marble, 7Timer, and NOAA. This data is provided for planning purposes only. We do not
+        guarantee its accuracy and are not responsible for decisions made based on it, including decisions to travel
+        to remote locations. Always use your own judgment and take appropriate safety precautions.
       </p>
 
       <h2>5. User Conduct</h2>
@@ -86,7 +87,7 @@ export default function Terms() {
       <h2>9. Termination</h2>
       <p>
         We may suspend or terminate your access to the App if you violate these Terms. You may stop using the App and
-        delete your account at any time.
+        uninstall it at any time.
       </p>
 
       <h2>10. Changes to These Terms</h2>

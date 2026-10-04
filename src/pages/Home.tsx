@@ -46,7 +46,7 @@ const FEATURES: Feature[] = [
   },
   {
     title: 'Saved shooting sites',
-    body: 'Save your favorite dark-sky spots and check conditions at any of them in a tap. Your sites sync across devices.',
+    body: 'Save your favorite dark-sky spots and see tonight’s score, best viewing window, and Bortle class for each at a glance.',
     icon: (
       <svg {...iconProps}>
         <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" />

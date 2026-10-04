@@ -16,6 +16,18 @@ const FAQS: { q: string; a: string }[] = [
     a: 'Make sure you are signed in with the same Apple ID you used to purchase, then use “Restore Purchases” in the app. If it still isn’t working, email us and include your app version.',
   },
   {
+    q: 'Do I need an account?',
+    a: 'No. AstroRadar works without an account. Your saved sites and settings are stored on your device, and Pro is tied to your Apple ID, so you can restore it on any of your devices with “Restore Purchases.”',
+  },
+  ...(SITE.androidComingSoon
+    ? [
+        {
+          q: 'Is AstroRadar available on Android?',
+          a: `Not yet. AstroRadar is launching on iPhone first, and an Android version is coming soon. Email ${SITE.supportEmail} if you’d like a heads-up when it’s ready.`,
+        },
+      ]
+    : []),
+  {
     q: 'Why does AstroRadar need my location?',
     a: 'Your location is used to show light pollution, Bortle class, and forecasts for where you are. You can deny or revoke location access at any time in Settings and search for locations manually instead.',
   },
@@ -24,8 +36,8 @@ const FAQS: { q: string; a: string }[] = [
     a: 'It is based on NASA Black Marble (VIIRS) satellite imagery and is best used for planning. Actual conditions on the ground can vary.',
   },
   {
-    q: 'How do I delete my account and data?',
-    a: `Email ${SITE.supportEmail} from the address associated with your account, and we’ll delete your account and all associated data.`,
+    q: 'How do I delete my data?',
+    a: 'Your saved sites live on your device. Delete them individually in the app, or uninstall AstroRadar to remove all app data. We don’t keep a copy on our servers.',
   },
 ];
 

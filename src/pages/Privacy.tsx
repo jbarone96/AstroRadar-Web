@@ -10,63 +10,69 @@ export default function Privacy() {
     <LegalLayout title="Privacy Policy" lastUpdated={SITE.legalLastUpdated}>
       <p>
         {SITE.company} ("we," "us," or "our") operates {SITE.appName} (the "App"). This Privacy Policy explains what
-        information we collect, how we use it, and the choices you have. By using {SITE.appName}, you agree to the
-        collection and use of information in accordance with this policy.
+        information the App uses, how it is used, and the choices you have. By using {SITE.appName}, you agree to the
+        use of information in accordance with this policy.
+      </p>
+      <p>
+        <strong>
+          {SITE.appName} does not require an account, and we do not collect your name, email address, or other
+          contact details through the App.
+        </strong>
       </p>
 
-      <h2>Information We Collect</h2>
+      <h2>Information the App Uses</h2>
       <h3>Location data</h3>
       <p>
         With your permission, {SITE.appName} accesses your device's GPS location to show light pollution levels,
-        Bortle class, and astronomical forecasts for your current position or for a location you search for. Searched
-        locations are used to perform geocoding lookups through our mapping provider.
+        Bortle class, and astronomical forecasts for your current position or for a location you search for. To
+        provide this, coordinates and search terms are sent to the mapping and forecast providers listed below at the
+        time of each request. We do not store your location history on our servers.
       </p>
       <h3>Saved sites</h3>
       <p>
-        If you save a location in the App, we store its name and coordinates so you can return to it later. Saved
-        sites are tied to your account and persist until you delete them.
-      </p>
-      <h3>Account information</h3>
-      <p>
-        We collect basic account information, such as your email address, to authenticate you and sync your saved
-        data across devices.
+        If you save a location, its name and coordinates are stored locally on your device so you can return to it
+        later. Saved sites are not uploaded to our servers. They remain on your device until you delete them in the
+        App or uninstall the App.
       </p>
       <h3>Subscription and purchase data</h3>
       <p>
-        Purchases are processed by Apple through the App Store. Subscription status is managed through RevenueCat. We
-        do not receive or store your payment card details.
+        Purchases are processed by Apple through the App Store. Subscription status is managed through RevenueCat,
+        which uses an anonymous identifier to keep track of your entitlement. We do not receive or store your payment
+        card details, and we do not receive your Apple ID.
       </p>
-      <h3>Device and usage information</h3>
+      <h3>Device and diagnostic information</h3>
       <p>
-        We may collect device type, operating system version, and app version to help diagnose issues and keep the
-        App reliable.
+        We may receive basic technical information, such as device type, operating system version, and app version,
+        to help diagnose issues and keep the App reliable.
       </p>
       <h3>Notifications</h3>
       <p>
-        If you enable notifications, they are used only to schedule local alerts on your device (for example, moon
-        phase reminders). Alerts are not based on tracking your behavior.
+        If you enable notifications, they are used only to schedule alerts (for example, moon phase reminders). Alerts
+        are not based on tracking your behavior.
       </p>
 
-      <h2>How We Use Your Information</h2>
+      <h2>How We Use Information</h2>
       <ul>
         <li>To provide core functionality, including maps, forecasts, saved sites, and search</li>
         <li>To process and manage subscriptions</li>
-        <li>To sync your data across devices</li>
         <li>To maintain and improve the App's reliability</li>
-        <li>To respond to support requests</li>
+        <li>To respond to support requests you send us</li>
       </ul>
       <p>
-        <strong>We do not sell your personal information, and we do not use your location data for advertising.</strong>
+        <strong>We do not sell personal information, and we do not use location data for advertising.</strong>
       </p>
 
       <h2>Third-Party Services</h2>
       <p>{SITE.appName} relies on the following third-party services:</p>
       <ul>
         <li>
+          <strong>Apple Maps</strong> for base map display
+        </li>
+        <li>
           <strong>Mapbox</strong> for location search and geocoding
         </li>
         <li>
-          <strong>Firebase (Google)</strong> for authentication and data storage
+          <strong>7Timer and NOAA</strong> for weather and astronomical forecast data
         </li>
         <li>
           <strong>RevenueCat</strong> for subscription management
@@ -75,23 +81,30 @@ export default function Privacy() {
           <strong>Apple App Store</strong> for purchases
         </li>
         <li>
+          <strong>Cloudflare</strong> for hosting the App's light pollution map data
+        </li>
+        <li>
           <strong>NASA Black Marble (VIIRS)</strong> satellite imagery for light pollution data (this does not involve
           personal data)
         </li>
       </ul>
-      <p>Each of these services handles data under its own privacy policy.</p>
+      <p>
+        These providers may receive standard request information, such as your IP address and the coordinates being
+        looked up, in order to respond. Each handles data under its own privacy policy.
+      </p>
 
       <h2>Data Retention</h2>
       <p>
-        We retain your information while your account is active. You can delete individual saved sites at any time in
-        the App. {/* If you add in-app account deletion, update this sentence to mention it. */}
-        To delete your account and all associated data, contact us at {email}.
+        Saved sites and App settings are stored on your device and remain there until you delete them or uninstall the
+        App. We do not keep a copy. Subscription records are retained by Apple and RevenueCat under their own
+        policies. If you email us, we keep that correspondence only as long as needed to help you.
       </p>
 
       <h2>Your Choices</h2>
       <ul>
         <li>You can revoke location and notification permissions at any time in your device settings.</li>
-        <li>You can request deletion of your account and data by contacting us at {email}.</li>
+        <li>You can delete individual saved sites in the App, or remove all App data by uninstalling the App.</li>
+        <li>You can manage or cancel your subscription in your App Store account settings.</li>
       </ul>
 
       <h2>Children's Privacy</h2>
@@ -103,8 +116,8 @@ export default function Privacy() {
 
       <h2>Changes to This Policy</h2>
       <p>
-        We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated" date above
-        and, where appropriate, notify you within the App.
+        We may update this Privacy Policy from time to time, including if we add features such as user accounts. When
+        we do, we will revise the "Last updated" date above and, where appropriate, notify you within the App.
       </p>
 
       <h2>Contact</h2>
