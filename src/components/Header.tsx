@@ -6,7 +6,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link to="/" className="brand" aria-label="AstroRadar home">
-          <img src="/favicon.svg" alt="" width={32} height={32} />
+          <img src="/icon-512.png" alt="" width={32} height={32} />
           <span>AstroRadar</span>
         </Link>
         <nav className="nav" aria-label="Primary">

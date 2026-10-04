@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <img src="/favicon.svg" alt="" width={28} height={28} />
+          <img src="/icon-512.png" alt="" width={28} height={28} />
           <div>
             <strong>AstroRadar</strong>
             <p className="muted small">

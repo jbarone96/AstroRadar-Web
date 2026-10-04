@@ -103,7 +103,10 @@ export default function Home() {
                 See features
               </Link>
             </div>
-            <p className="muted small">Free to download · iPhone</p>
+            <p className="muted small">
+              Free to download on iPhone
+              {SITE.androidComingSoon && ' · Android coming soon'}
+            </p>
           </div>
           <div className="hero-visual">
             <div className="glow" aria-hidden="true" />
@@ -196,6 +199,11 @@ export default function Home() {
             <h2>Clear skies are out there.</h2>
             <p className="muted">Download AstroRadar and plan your next dark-sky session.</p>
             <AppStoreBadge />
+            {SITE.androidComingSoon && (
+              <p className="muted small" style={{ marginTop: 16, marginBottom: 0 }}>
+                On Android? It’s on the way.
+              </p>
+            )}
           </div>
         </div>
       </section>

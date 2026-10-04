@@ -15,6 +15,9 @@ export const SITE = {
   appStoreUrl: '',
   launchLabel: 'Coming to the App Store · Oct 9',
 
+  // Set to false (or remove the line) once Android ships.
+  androidComingSoon: true,
+
   legalLastUpdated: 'October 1, 2026',
 
   // Set to your state (e.g. 'North Carolina') to make the Terms specific.
@@ -28,22 +31,22 @@ export const SITE = {
 export const SCREENSHOTS: ScreenshotItem[] = [
   {
     src: '/screenshots/map.png',
-    alt: 'AstroRadar light pollution map showing Bortle classes',
+    alt: 'AstroRadar light pollution map of the U.S. Midwest showing city sky glow',
     caption: 'Light pollution map',
   },
   {
-    src: '/screenshots/forecast.png',
-    alt: 'AstroRadar astronomical forecast screen',
-    caption: 'Astronomical forecast',
+    src: '/screenshots/tonight.png',
+    alt: 'AstroRadar Tonight screen with a conditions score, overnight outlook, and top targets',
+    caption: 'Tonight’s conditions',
   },
   {
     src: '/screenshots/sites.png',
-    alt: 'AstroRadar saved shooting sites list',
+    alt: 'AstroRadar saved locations with scores, best viewing windows, and Bortle class',
     caption: 'Saved sites',
   },
   {
-    src: '/screenshots/alerts.png',
-    alt: 'AstroRadar sky alerts settings',
-    caption: 'Sky alerts',
+    src: '/screenshots/events.png',
+    alt: 'AstroRadar moon phase and upcoming sky events such as meteor showers and eclipses',
+    caption: 'Moon & sky events',
   },
 ];
