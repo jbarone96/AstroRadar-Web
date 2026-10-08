@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { track } from '@vercel/analytics';
 import './signup.css';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -33,6 +34,7 @@ export default function SignupForm({ list, placeholder, buttonLabel, successMess
       if (!res.ok) {
         throw new Error(data.error || 'Something went wrong. Please try again.');
       }
+      track('Signup', { list });
       setStatus('success');
       setEmail('');
       setMessage(successMessage);
