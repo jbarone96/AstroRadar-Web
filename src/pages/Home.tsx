@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import AppStoreBadge from '../components/AppStoreBadge';
 import Screenshot from '../components/Screenshot';
+import SignupForm from '../components/SignupForm';
 import { SCREENSHOTS, SITE } from '../config';
 import { usePageTitle } from '../hooks/usePageTitle';
 
@@ -81,6 +82,11 @@ export default function Home() {
   usePageTitle();
   const [heroShot, ...restShots] = SCREENSHOTS;
 
+  const launched = Boolean(SITE.appStoreUrl);
+  const showWaitlist = !launched;
+  const showAndroid = SITE.androidTestersWanted;
+  const showNotify = showWaitlist || showAndroid;
+
   return (
     <>
       {/* Hero */}
@@ -103,10 +109,36 @@ export default function Home() {
                 See features
               </Link>
             </div>
-            <p className="muted small">
-              Free to download on iPhone
-              {SITE.androidComingSoon && ' · Android coming soon'}
-            </p>
+
+            {showWaitlist ? (
+              <div className="hero-signup">
+                <SignupForm
+                  list="waitlist"
+                  placeholder="you@email.com"
+                  buttonLabel="Notify me"
+                  successMessage="You’re on the list. We’ll email you when AstroRadar is live."
+                />
+                <p className="muted small">
+                  One email at launch. No spam.
+                  {showAndroid && (
+                    <>
+                      {' '}
+                      On Android? <Link to="/#notify">Join the beta</Link>.
+                    </>
+                  )}
+                </p>
+              </div>
+            ) : (
+              <p className="muted small">
+                Free to download on iPhone
+                {showAndroid && (
+                  <>
+                    {' · '}
+                    <Link to="/#notify">Android testers wanted</Link>
+                  </>
+                )}
+              </p>
+            )}
           </div>
           <div className="hero-visual">
             <div className="glow" aria-hidden="true" />
@@ -192,21 +224,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section">
-        <div className="container">
-          <div className="cta card">
-            <h2>Clear skies are out there.</h2>
-            <p className="muted">Download AstroRadar and plan your next dark-sky session.</p>
-            <AppStoreBadge />
-            {SITE.androidComingSoon && (
-              <p className="muted small" style={{ marginTop: 16, marginBottom: 0 }}>
-                On Android? It’s on the way.
-              </p>
-            )}
+      {/* Waitlist + Android testers */}
+      {showNotify && (
+        <section id="notify" className="section section-alt">
+          <div className="container">
+            <div className="section-head">
+              <p className="eyebrow">Stay in the loop</p>
+              <h2>{showWaitlist ? 'Be the first under darker skies' : 'Help shape AstroRadar on Android'}</h2>
+            </div>
+            <div className={`notify-grid${showWaitlist && showAndroid ? '' : ' single'}`}>
+              {showWaitlist && (
+                <div className="card notify-card">
+                  <span className="tag tag-ios">iPhone</span>
+                  <h3>Get notified at launch</h3>
+                  <p className="muted">
+                    AstroRadar is coming to the App Store in {SITE.launchWindow}. Leave your email and we’ll send
+                    one message the moment it’s live.
+                  </p>
+                  <SignupForm
+                    list="waitlist"
+                    placeholder="you@email.com"
+                    buttonLabel="Notify me"
+                    successMessage="You’re on the list. We’ll email you when AstroRadar is live."
+                  />
+                </div>
+              )}
+              {showAndroid && (
+                <div className="card notify-card">
+                  <span className="tag tag-android">Android testers needed!</span>
+                  <h3>Join the Android beta</h3>
+                  <p className="muted">
+                    We’re looking for Android users to try early builds through Google Play testing before the
+                    public release. Use the Google account email you use for the Play Store and we’ll send you an
+                    invite.
+                  </p>
+                  <SignupForm
+                    list="android"
+                    placeholder="you@gmail.com"
+                    buttonLabel="Join the beta"
+                    successMessage="Thanks! We’ll email your Google Play testing invite soon."
+                  />
+                  <p className="muted small fine-print">
+                    Testers are asked to stay opted in for at least 14 days.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* CTA (after launch) */}
+      {launched && (
+        <section className="section">
+          <div className="container">
+            <div className="cta card">
+              <h2>Clear skies are out there.</h2>
+              <p className="muted">Download AstroRadar and plan your next dark-sky session.</p>
+              <AppStoreBadge />
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

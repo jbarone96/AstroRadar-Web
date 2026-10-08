@@ -11,20 +11,24 @@ export const SITE = {
   supportEmail: 'astroradar.app.support@gmail.com',
 
   // Paste your App Store link here once the listing is live,
-  // e.g. 'https://apps.apple.com/app/astroradar/id1234567890'
+  // e.g. 'https://apps.apple.com/app/astroradar/id1234567890'.
+  // While empty, the site shows "coming soon" messaging and the launch waitlist.
   appStoreUrl: '',
-  launchLabel: 'Coming to the App Store · Oct 9',
 
-  // Set to false (or remove the line) once Android ships.
-  androidComingSoon: true,
+  // Launch messaging used across the site while appStoreUrl is empty.
+  launchWindow: 'mid-October', // full label: "Coming to the App Store · mid-October"
+  launchShort: 'Coming mid-Oct', // compact header pill
 
-  legalLastUpdated: 'October 1, 2026',
+  // Shows the "Android testers needed!" signup. Set to false once testing is full.
+  androidTestersWanted: true,
+
+  legalLastUpdated: 'October 8, 2026',
 
   // Set to your state (e.g. 'North Carolina') to make the Terms specific.
   // Leave empty to use the general wording.
   governingState: '',
 
-  // Optional display price for Pro, e.g. '$2.99/mo'. Leave empty to defer to the App Store.
+  // Optional display price for Pro, e.g. '$4.99/mo'. Leave empty to defer to the App Store.
   proPrice: '',
 };
 

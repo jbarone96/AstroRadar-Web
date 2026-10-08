@@ -8,10 +8,11 @@ export default function AppStoreBadge({ compact = false }: Props) {
   const height = compact ? 40 : 54;
 
   if (!SITE.appStoreUrl) {
+    const label = compact ? SITE.launchShort : `Coming to the App Store · ${SITE.launchWindow}`;
     return (
-      <span className={`coming-soon ${compact ? 'compact' : ''}`} aria-label={SITE.launchLabel}>
+      <span className={`coming-soon ${compact ? 'compact' : ''}`} aria-label={`Coming to the App Store ${SITE.launchWindow}`}>
         <span className="pulse-dot" aria-hidden="true" />
-        {compact ? 'Coming Oct 9' : SITE.launchLabel}
+        {label}
       </span>
     );
   }

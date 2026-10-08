@@ -9,9 +9,10 @@ export default function Privacy() {
   return (
     <LegalLayout title="Privacy Policy" lastUpdated={SITE.legalLastUpdated}>
       <p>
-        {SITE.company} ("we," "us," or "our") operates {SITE.appName} (the "App"). This Privacy Policy explains what
-        information the App uses, how it is used, and the choices you have. By using {SITE.appName}, you agree to the
-        use of information in accordance with this policy.
+        {SITE.company} ("we," "us," or "our") operates {SITE.appName} (the "App") and the website at{' '}
+        {SITE.domain} (the "Website"). This Privacy Policy explains what information the App and Website use, how it
+        is used, and the choices you have. By using {SITE.appName} or the Website, you agree to the use of information
+        in accordance with this policy.
       </p>
       <p>
         <strong>
@@ -51,10 +52,32 @@ export default function Privacy() {
         are not based on tracking your behavior.
       </p>
 
+      <h2>Website Signups</h2>
+      <p>
+        If you sign up on the Website to be notified when {SITE.appName} launches, or to join Android testing, we
+        collect the email address you provide. We use it only for the purpose you signed up for:
+      </p>
+      <ul>
+        <li>
+          <strong>Launch waitlist:</strong> to email you when {SITE.appName} is available, and occasionally with
+          closely related product news.
+        </li>
+        <li>
+          <strong>Android testing:</strong> to invite you to test pre-release versions of {SITE.appName}. To grant
+          access, we add your email to the tester list in Google Play Console, and Google handles it under its own
+          privacy policy.
+        </li>
+      </ul>
+      <p>
+        Signup emails are stored with our email provider, Resend. You can unsubscribe at any time using the link in
+        any email we send, or by contacting us at {email}.
+      </p>
+
       <h2>How We Use Information</h2>
       <ul>
         <li>To provide core functionality, including maps, forecasts, saved sites, and search</li>
         <li>To process and manage subscriptions</li>
+        <li>To send launch notices and testing invitations you request through the Website</li>
         <li>To maintain and improve the App's reliability</li>
         <li>To respond to support requests you send us</li>
       </ul>
@@ -63,7 +86,7 @@ export default function Privacy() {
       </p>
 
       <h2>Third-Party Services</h2>
-      <p>{SITE.appName} relies on the following third-party services:</p>
+      <p>{SITE.appName} and the Website rely on the following third-party services:</p>
       <ul>
         <li>
           <strong>Apple Maps</strong> for base map display
@@ -84,6 +107,15 @@ export default function Privacy() {
           <strong>Cloudflare</strong> for hosting the App's light pollution map data
         </li>
         <li>
+          <strong>Resend</strong> for storing Website signup emails and sending launch and testing emails
+        </li>
+        <li>
+          <strong>Google Play</strong> for distributing Android test builds to testers who sign up
+        </li>
+        <li>
+          <strong>Vercel</strong> for hosting the Website
+        </li>
+        <li>
           <strong>NASA Black Marble (VIIRS)</strong> satellite imagery for light pollution data (this does not involve
           personal data)
         </li>
@@ -97,7 +129,8 @@ export default function Privacy() {
       <p>
         Saved sites and App settings are stored on your device and remain there until you delete them or uninstall the
         App. We do not keep a copy. Subscription records are retained by Apple and RevenueCat under their own
-        policies. If you email us, we keep that correspondence only as long as needed to help you.
+        policies. Website signup emails are kept until you unsubscribe or ask us to delete them. If you email us, we
+        keep that correspondence only as long as needed to help you.
       </p>
 
       <h2>Your Choices</h2>
@@ -105,13 +138,14 @@ export default function Privacy() {
         <li>You can revoke location and notification permissions at any time in your device settings.</li>
         <li>You can delete individual saved sites in the App, or remove all App data by uninstalling the App.</li>
         <li>You can manage or cancel your subscription in your App Store account settings.</li>
+        <li>You can unsubscribe from Website emails at any time, or ask us to delete your email at {email}.</li>
       </ul>
 
       <h2>Children's Privacy</h2>
       <p>
-        {SITE.appName} is not directed at children under 13, and we do not knowingly collect personal information
-        from children under 13. If you believe a child has provided us with personal information, please contact us
-        and we will delete it.
+        {SITE.appName} and the Website are not directed at children under 13, and we do not knowingly collect
+        personal information from children under 13. If you believe a child has provided us with personal
+        information, please contact us and we will delete it.
       </p>
 
       <h2>Changes to This Policy</h2>

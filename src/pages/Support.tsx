@@ -2,7 +2,17 @@ import { Link } from 'react-router-dom';
 import { SITE } from '../config';
 import { usePageTitle } from '../hooks/usePageTitle';
 
+const launched = Boolean(SITE.appStoreUrl);
+
 const FAQS: { q: string; a: string }[] = [
+  ...(!launched
+    ? [
+        {
+          q: 'When does AstroRadar launch?',
+          a: `AstroRadar is coming to the App Store in ${SITE.launchWindow}. Join the waitlist on the home page and we’ll email you the moment it’s live.`,
+        },
+      ]
+    : []),
   {
     q: 'How do I cancel or manage AstroRadar Pro?',
     a: 'Subscriptions are managed by Apple. On your iPhone, open Settings → your name → Subscriptions → AstroRadar. Cancel at least 24 hours before your renewal date to avoid being charged for the next period.',
@@ -19,14 +29,12 @@ const FAQS: { q: string; a: string }[] = [
     q: 'Do I need an account?',
     a: 'No. AstroRadar works without an account. Your saved sites and settings are stored on your device, and Pro is tied to your Apple ID, so you can restore it on any of your devices with “Restore Purchases.”',
   },
-  ...(SITE.androidComingSoon
-    ? [
-        {
-          q: 'Is AstroRadar available on Android?',
-          a: `Not yet. AstroRadar is launching on iPhone first, and an Android version is coming soon. Email ${SITE.supportEmail} if you’d like a heads-up when it’s ready.`,
-        },
-      ]
-    : []),
+  {
+    q: 'Is AstroRadar available on Android?',
+    a: SITE.androidTestersWanted
+      ? 'Not yet, but it’s in testing and we need Android testers! Sign up at the bottom of the home page with the Google account email you use for the Play Store, and we’ll send you a Google Play testing invite.'
+      : 'Not yet. AstroRadar is launching on iPhone first, and an Android version is on the way.',
+  },
   {
     q: 'Why does AstroRadar need my location?',
     a: 'Your location is used to show light pollution, Bortle class, and forecasts for where you are. You can deny or revoke location access at any time in Settings and search for locations manually instead.',
@@ -37,7 +45,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How do I delete my data?',
-    a: 'Your saved sites live on your device. Delete them individually in the app, or uninstall AstroRadar to remove all app data. We don’t keep a copy on our servers.',
+    a: `Your saved sites live on your device. Delete them individually in the app, or uninstall AstroRadar to remove all app data. If you signed up for email updates on our website, use the unsubscribe link in any email or contact ${SITE.supportEmail} to have your email removed.`,
   },
 ];
 
